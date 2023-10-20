@@ -28,8 +28,10 @@ const Feed = () => {
   
       setPost(data);
     };
+    console.log(post);
     fetchPosts();
-  }, [])
+  }, []);
+
   const handleSearchChange = (e) => {
 
   }
@@ -45,6 +47,7 @@ const Feed = () => {
         required
         className="search_input peer" />
       </form>
+
       <PostCardList
       data={post}
       handleTagClick={""}/>
