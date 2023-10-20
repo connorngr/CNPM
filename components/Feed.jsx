@@ -23,12 +23,11 @@ const Feed = () => {
   
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+      const response = await fetch('/api/post');
       const data = await response.json();
   
       setPost(data);
-    }
-    console.log(post);
+    };
     fetchPosts();
   }, [])
   const handleSearchChange = (e) => {
