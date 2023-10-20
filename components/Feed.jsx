@@ -23,7 +23,7 @@ const Feed = () => {
   
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch('/api/post');
+      const response = await fetch(`/api/users/${session?.user.id}/posts`);
       const data = await response.json();
   
       setPost(data);
@@ -46,7 +46,6 @@ const Feed = () => {
         required
         className="search_input peer" />
       </form>
-
       <PostCardList
       data={post}
       handleTagClick={""}/>
