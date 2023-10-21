@@ -1,6 +1,9 @@
+'use client';
 import Feed from 'components/Feed';
 import Head from 'next/head';
+import { useSession } from 'next-auth/react';
 const Home = () => {
+    const {data: session} = useSession();
     return (
         <>
         <Head>
@@ -12,9 +15,12 @@ const Home = () => {
             <br />
             <span className="blue_gradient text-center">You might interested in</span>
             </h1>
-            <p className="desc text-center">
-                What the heck is going on.
-            </p>
+            {!session ? <p className="desc text-center">
+                Sign in now to see projects.
+            </p> : <p className="desc text-center">
+                See all projects below.
+            </p>}
+            
             {/* feed will be built later */}
             <Feed/>
         </section>

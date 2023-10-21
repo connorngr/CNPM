@@ -6,16 +6,15 @@ import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
 const PostCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
-  const [copied, setCopied] = useState("");
-
-  const {data: session} = useSession();
+  const [copied, setCopied] = useState("");  
   const pathName = usePathname();
-
+  
   const handleCopy = () => {
     setCopied(post.description);
     navigator.clipboard.writeText(post.description);
     setTimeout(() => setCopied(""), 3000);
   }
+  const {data: session} = useSession();
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
@@ -46,7 +45,7 @@ const PostCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
       <h1 className="my-4 font-satoshi font-bold">{post.name}</h1>
       <p>{post.description}</p>
 
-      {/* {session?.user.id === post.creator._id &&
+      {session?.user.id === post.creator._id &&
       pathName === "/profile" && (
         <div
         className="mt-5 flex-center gap-4
@@ -62,7 +61,7 @@ const PostCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             Delete
           </p>
         </div>
-      )} */}
+      )}
     </div>
   )
 }

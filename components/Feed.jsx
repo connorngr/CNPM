@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
+import { useSession } from "next-auth/react";
 import PostCard from "./PostCard";
 
 const PostCardList = ({data, handleTagClick}) => {
@@ -20,7 +20,7 @@ const Feed = () => {
   const [searchText, setSearchText] = useState("");
 
   const [post, setPost] = useState([]);
-  
+  const {data: session} = useSession();
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch('/api/post');
@@ -32,24 +32,27 @@ const Feed = () => {
   }, []);
 
   const handleSearchChange = (e) => {
-
+    
   }
   
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
-        <input 
-        type="text"
-        placeholder="Find projects here"
-        value={searchText}
-        onChange={handleSearchChange}
-        required
-        className="search_input peer" />
+        
       </form>
-
-      <PostCardList
+    {session?
+    <>
+    <input 
+    type="text"
+    placeholder="Find projects here"
+    value={searchText}
+    onChange={handleSearchChange}
+    required
+    className="search_input peer" />
+     <PostCardList
       data={post}
-      handleTagClick={""}/>
+      handleTagClick={""}/> </> : <></>}
+      
     </section>
   )
 }
