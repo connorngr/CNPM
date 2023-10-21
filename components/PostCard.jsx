@@ -46,7 +46,7 @@ const PostCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
       <h1 className="my-4 font-satoshi font-bold">{post.name}</h1>
       <p>{post.description}</p>
 
-      {session?.user.id === post.creator._id &&
+      {/* {session?.user.id === post.creator._id &&
       pathName === "/profile" && (
         <div
         className="mt-5 flex-center gap-4
@@ -62,7 +62,7 @@ const PostCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             Delete
           </p>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
