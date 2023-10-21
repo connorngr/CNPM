@@ -28,7 +28,6 @@ const Feed = () => {
   
       setPost(data);
     };
-    console.log(post);
     fetchPosts();
   }, []);
 

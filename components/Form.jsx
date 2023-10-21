@@ -25,7 +25,7 @@ const Form = ({type, post, setPost, submit, handleSubmit}) => {
              placeholder="Write your project's name..."
              required
              className="form_input"/>
-        </label>
+        </label>w
         <label>
           <span className="font-satoshi font-bold text-base text-gray-700">
             Description
