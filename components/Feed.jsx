@@ -44,7 +44,7 @@ const Feed = () => {
     <>
     <input 
     type="text"
-    placeholder="Find projects here"
+    placeholder="Tìm dự án"
     value={searchText}
     onChange={handleSearchChange}
     required

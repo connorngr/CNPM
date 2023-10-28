@@ -23,7 +23,7 @@ const Nav = () => {
     mb-16 pt-3'>
         <Link href="/" className='flex gap-2
         flex-center'>
-            <Image src="assets/images/my_logo.svg"
+            <Image src="assets/images/donation.svg"
             alt="404"
             width={30}
             height={30}
@@ -31,7 +31,7 @@ const Nav = () => {
             onClick="/"
             />
             <p className='logo_text'
-                onClick="/">ConnorNG's Project</p>        
+                onClick="/">Dự án quyên góp</p>        
         </Link>
         {/* desktop ver */}
         {/* md sm medium small */}
@@ -39,11 +39,11 @@ const Nav = () => {
             {session?.user ? (
                 <div className='flex gap-3 md:gap-5'>
                     <Link href="/create_post" className='black_btn'>
-                        Create Project
+                        Tạo dự án
                     </Link>
                     <button type='button' 
                     onClick={signOut}
-                    className='outline_btn'>Sign Out
+                    className='outline_btn'>Đăng xuất
                     </button>
                     <Link href="/profile">
                     <Image src={session?.user.image}
@@ -61,7 +61,7 @@ const Nav = () => {
                     key={provider.name}                    
                     onClick={() => {signIn(provider.id)}}
                     className='black_btn'>
-                        Sign In
+                        Đăng nhập
                     </button>
                 ))}                
             </>
@@ -83,14 +83,14 @@ const Nav = () => {
                             href="/profile"
                             className='dropdown_link'
                             onClick={() => setNavBar(false)}
-                            >My profile
+                            >Trang cá nhân
                             </Link>
                             <Link
                             href="/create_post"
                             className='dropdown_link'
                             onClick={() => setNavBar(false)}
                             >
-                                Create new post</Link>
+                                Tạo dự án mới</Link>
                             <button className='mt-5 w-full black_btn'
                             type='button'
                             onClick={() => {setNavBar(false); signOut();}}>
@@ -107,7 +107,7 @@ const Nav = () => {
                     key={provider.name}
                     onClick={() => signIn(provider.id)}
                     className='black_btn'>
-                        Sign In
+                        Đăng nhập
                     </button>
                 ))}
                         </>

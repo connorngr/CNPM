@@ -1,7 +1,7 @@
 import "@styles/globals.css";
 import Nav from "components/Nav";
 import Providers from "@components/Providers";
-import Head from "next/head";
+
 export const metadata = {
     title: "CrowFunding posts",
     description: "Leading platform for the biggest thinkers",
@@ -16,7 +16,8 @@ const RootLayout = ({children}) => {
             </div>            
                 <main className="app">
                 <Nav/>
-                {children}                
+                {children}  
+               
                 </main>                       
             </Providers>    
             

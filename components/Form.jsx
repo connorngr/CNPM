@@ -5,10 +5,10 @@ const Form = ({type, post, setPost, submit, handleSubmit}) => {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
       <h1 className="text-left head_text">
-        <span className="blue_gradient">{type} Post</span>
+        <span className="blue_gradient">{type} dự án</span>
       </h1>
       <p className="mt-3">
-        Let your projects be funded
+        Hãy để cho dự án của bạn trở thành hiện thực.
       </p>
 
       <form 
@@ -16,7 +16,7 @@ const Form = ({type, post, setPost, submit, handleSubmit}) => {
       className="mt-10 w-full max-w-2x1 flex flex-col gap-7 glassmorphism">
         <label>
           <span className="font-satoshi font-bold text-base text-gray-700">
-            Your project's name
+            Tên dự án
           </span>
           <input
           value={post.name}
@@ -25,10 +25,10 @@ const Form = ({type, post, setPost, submit, handleSubmit}) => {
              placeholder="Write your project's name..."
              required
              className="form_input"/>
-        </label>w
+        </label>
         <label>
           <span className="font-satoshi font-bold text-base text-gray-700">
-            Description
+            Mô tả
           </span>
           <textarea 
           value={post.description}

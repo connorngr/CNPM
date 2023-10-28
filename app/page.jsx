@@ -7,18 +7,18 @@ const Home = () => {
     return (
         <>
         <Head>
-                <title>Index Page</title>
+                
             </Head>
         <section className="w-full flex-center flex-col">
             
-            <h1 className="head_text text-center">Discover Projects
+            <h1 className="head_text text-center">Khám phá các 
             <br />
-            <span className="blue_gradient text-center">You might interested in</span>
+            <span className="blue_gradient text-center">Dự án quyên góp</span>
             </h1>
             {!session ? <p className="desc text-center">
-                Sign in now to see projects.
+                Đăng nhập để bắt đầu.
             </p> : <p className="desc text-center">
-                See all projects below.
+                Xem các dự án bên dưới.
             </p>}
             
             {/* feed will be built later */}

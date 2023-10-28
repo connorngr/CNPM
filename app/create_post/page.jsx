@@ -40,7 +40,7 @@ const CreatePost = () => {
   }
   return (
       <Form 
-      type="Create"
+      type="Tạo"
       post={post}
       setPost={setPost}
       submit={submit}
